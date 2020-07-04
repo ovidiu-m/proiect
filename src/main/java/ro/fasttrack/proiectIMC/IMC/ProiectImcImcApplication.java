@@ -4,8 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import ro.fasttrack.proiectIMC.IMC.domain.IMC;
-import ro.fasttrack.proiectIMC.IMC.repository.IMCRepository;
+import ro.fasttrack.proiectIMC.IMC.domain.Imc;
+import ro.fasttrack.proiectIMC.IMC.repository.ImcRepository;
 
 import java.util.List;
 
@@ -17,12 +17,12 @@ public class ProiectImcImcApplication {
     }
 
     @Bean
-    CommandLineRunner atStartup(IMCRepository repo) {
+    CommandLineRunner atStartup(ImcRepository repo) {
 		return args -> repo.saveAll(List.of(
-					new IMC("Ana", 160, 60, 23),
-					new IMC("Mihai", 190, 80, 22),
-					new IMC("George", 170, 70, 24),
-                    new IMC("Andrei",180,80,25)
+					new Imc("Ana", 160, 60, 23),
+					new Imc("Mihai", 190, 80, 22),
+					new Imc("George", 170, 70, 24),
+                    new Imc("Andrei",180,80,25)
 			));
 		}
     }

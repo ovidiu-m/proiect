@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class IMC {
+public class Imc {
     @Id
     @GeneratedValue
     private Integer id;
@@ -15,18 +15,18 @@ public class IMC {
     private int greutate;
     private double rezultat;
 
-    public IMC() {
+    public Imc() {
 
     }
 
-    public IMC(String nume, double inaltime, int greutate, double rezultat) {
+    public Imc(String nume, double inaltime, int greutate, double rezultat) {
         this.nume = nume;
         this.inaltime = inaltime;
         this.greutate = greutate;
         this.rezultat = rezultat;
     }
 
-    public String getName() {
+    public String getNume() {
         return nume;
     }
 
@@ -70,7 +70,7 @@ public class IMC {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        IMC imc = (IMC) o;
+        Imc imc = (Imc) o;
         return Double.compare(imc.inaltime, inaltime) == 0 &&
                 greutate == imc.greutate &&
                 Double.compare(imc.rezultat, rezultat) == 0 &&
