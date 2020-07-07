@@ -16,6 +16,10 @@ public class ImcUiController {
     public ImcUiController(final ImcService imcService) {
         this.imcService = imcService;
     }
+    @GetMapping
+    public String rootPage() {
+        return "redirect:/imcs";
+    }
 
     @GetMapping("imcs")
     public String imcsPage(Model pageModel) {

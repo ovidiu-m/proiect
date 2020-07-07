@@ -37,4 +37,8 @@ public class ImcService {
         imcRepository.deleteById(id);
         return imc;
     }
+    public Imc replaceImc(int id, Imc imc) {
+        imc.setId(id);
+        return imcRepository.save(imc);
+    }
 }

@@ -1,5 +1,4 @@
 package ro.fasttrack.proiectIMC.IMC.api;
-
 import org.springframework.web.bind.annotation.*;
 import ro.fasttrack.proiectIMC.IMC.domain.Imc;
 import ro.fasttrack.proiectIMC.IMC.service.ImcService;
@@ -16,6 +15,10 @@ public ImcController(final ImcService imcService) {
     @PostMapping
     Imc addImc(@RequestBody Imc newImc){
         return imcService.addImc(newImc);
+    }
+    @PutMapping("{id}")
+    Imc replaceImc(@PathVariable int id, @RequestBody Imc imc) {
+        return imcService.replaceImc(id, imc);
     }
     @DeleteMapping("{id}")
     Imc deleteImc(@PathVariable int id){

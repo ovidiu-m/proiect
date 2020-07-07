@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <script src="/imcs.js"></script>
 </head>
 <body>
@@ -67,7 +67,7 @@
                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="inaltime">
                 <label class="mb-2 mr-sm-2 "></label>
                 <input type="text" class="form-control mb-2 mr-sm-2" placeholder="greutate">
-                <button type="button" class="btn btn-primary mb-2 " data-toggle="modal" data-target="#calculeazaIMCModal">Calculeaza</button>
+                <button type="button" class="btn btn-primary mb-2 " data-toggle="modal" data-target="#addImcModal">Calculeaza</button>
             </form>
             <div class="cotainer mb-3" style="margin-top:30px">
                 <div class="col-sm-12">
@@ -106,6 +106,7 @@
                     <td data-th-text="${imc.rezultat}"></td>
                     <td>
                         <div data-th-id="${imc.id}" style="cursor: pointer">
+                            <i class="fas fa-edit mr-2" data-target="#addImcModal" data-toggle="modal"></i>
                             <i class="fas fa-trash-alt"></i>
                         </div>
                     </td>
@@ -141,11 +142,11 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="calculeazaIMCModal">
+<div class="modal fade" id="addImcModal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add IMC</h4>
+                <h4 class="modal-nume">Add Imc</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
@@ -169,7 +170,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn-danger" data-dismiss="modal">Close</button>
-                <button id="modal-save-button" type="button" class="btn-primary">Save</button>
+                <button class="btn btn-primary" id="modal-save-button" type="button" >Save</button>
             </div>
         </div>
     </div>
